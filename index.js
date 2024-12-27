@@ -5,7 +5,6 @@ const app = express()
 app.use(express.json())
 
 let persons = [
-  [
     { 
       "id": "1",
       "name": "Arto Hellas", 
@@ -27,7 +26,6 @@ let persons = [
       "number": "39-23-6423122"
     }
 ]
-]
 
 
   app.get('/', (request, response) => {
@@ -37,6 +35,13 @@ let persons = [
   app.get('/api/persons', (request, response) => {
     response.json(persons)
   })
+
+  app.get('/info', (request, response) => {
+    response.send(`<p>Phonebook has info for ${persons.length} people</p>
+    <p>${new Date()}</p>`)
+  })
+
+
 
   // app.get('/api/notes/:id', (request, response) => {
   //   const id = request.params.id
