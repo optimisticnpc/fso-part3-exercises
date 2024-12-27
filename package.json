@@ -15,6 +15,7 @@
     "fso-part3-exercises": "file:"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.9"
   }
 }
