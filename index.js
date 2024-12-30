@@ -1,7 +1,9 @@
 const http = require('http')
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
+app.use(cors())
 
 app.use(express.json())
 morgan.token('postData', (req) => {
@@ -37,7 +39,7 @@ let persons = [
 
 
   app.get('/', (request, response) => {
-    response.send('<h1>You didn\'t request anything. This is a test of changing something</h1>')
+    response.send('<h1> Phonebook App </h1><h1>You didn\'t request anything.</h1>')
   })
   
   app.get('/api/persons', (request, response) => {
